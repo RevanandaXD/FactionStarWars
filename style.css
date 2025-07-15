@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Ubuntu, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.choice {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.faction-container {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 10px;
+  cursor: pointer;
+}
+
+.faction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  border: 1.5px solid grey;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+.faction:hover {
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+              0 0 30px rgba(255, 255, 255, 0.3),
+              0 0 45px rgba(255, 255, 255, 0.1);
+  transform: scale(1.04);
+  transition: all 0.3s ease;
+}
+
+.faction-container:has(.faction:hover) .faction:not(:hover) {
+  filter: blur(3px);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.image-faction {
+  width: 170px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 7px;
+}
+
+.information {
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0 9.5px 10px 9.5px;
+  text-align: center;
+}
+
+.btn-review {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.5rem 1.4rem;
+  border: 1.5px solid #fff;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  transition: ease-in 150ms;
+  cursor: pointer;
+}
+
+.btn-review:hover {
+  background: #fff;
+  color: #000;
+}
+
+.music-hover {
+  opacity: 0;
+}
+
+.video-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  height: 500px;
+  width: 1000px;
+}
+
+.close-btn {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.5rem 1.4rem;
+  border: 1.5px solid #fff;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  transition: ease-in 150ms;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.faction-choose {
+  color: #fff;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 3px;
+}
+
+@media (max-width: 780px) {
+  .choice {
+    text-align: center;
+    font-size: 3.7rem;
+  }
+
+  .faction-container {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  .video-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .choice {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .faction-container {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  .faction-choose {
+    font-size: 2rem;
+  }
+
+  .video-container {
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .video {
+    height: 300px;
+    width: 500px;
+  }
+}
