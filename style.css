@@ -11,27 +11,29 @@ html {
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   background: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .choice {
-  font-size: 4rem;
+  font-size: 3rem;
   letter-spacing: 2px;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .faction-container {
   display: grid;
-  grid-template-columns: repeat(4, 220px);
-  gap: 10px;
-  cursor: pointer;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .faction {
@@ -57,14 +59,9 @@ body {
   transform: scale(1.04);
 }
 
-.faction-container:has(.faction:hover) .faction:not(:hover) {
-  filter: blur(3px);
-  opacity: 0.7;
-}
-
 .image-faction {
-  width: 170px;
-  height: 100px;
+  width: 140px;
+  height: 80px;
   object-fit: cover;
   object-position: center;
   margin: 10px;
@@ -72,14 +69,15 @@ body {
 
 .title {
   font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 7px;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .information {
   font-weight: 500;
   font-size: 0.75rem;
-  padding: 0 9.5px 10px 9.5px;
+  padding: 0 10px 10px 10px;
   text-align: center;
 }
 
@@ -88,7 +86,7 @@ body {
   margin-top: 10px;
   font-weight: 700;
   font-size: 0.8rem;
-  padding: 0.5rem 1.4rem;
+  padding: 0.4rem 1rem;
   border: 1.5px solid #fff;
   border-radius: 5px;
   background: transparent;
@@ -103,8 +101,11 @@ body {
   color: #000;
 }
 
-.music-hover {
-  opacity: 0;
+.faction-choose {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .video-container {
@@ -115,54 +116,48 @@ body {
 }
 
 .video {
-  width: 1000px;
-  height: 500px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
 }
 
-.faction-choose {
-  color: #fff;
-  font-weight: 700;
-  font-size: 3.5rem;
-  margin-bottom: 3px;
-}
-
-/* Responsive Styles */
-@media (max-width: 780px) {
+/* Media Query Tablet */
+@media (max-width: 900px) {
   .choice {
-    text-align: center;
-    font-size: 3.7rem;
+    font-size: 2.5rem;
   }
-  .faction-container {
-    grid-template-columns: repeat(2, 200px);
-  }
-  .video-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-}
 
-@media (max-width: 500px) {
-  .choice {
-    text-align: center;
-    font-size: 3rem;
+  .image-faction {
+    width: 130px;
+    height: 70px;
   }
-  .faction-container {
-    grid-template-columns: repeat(2, 200px);
-  }
+
   .faction-choose {
     font-size: 2rem;
   }
-  .video-container {
-    display: none;
-    opacity: 0;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+}
+
+/* Media Query Phone */
+@media (max-width: 600px) {
+  .choice {
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
-  .video {
-    width: 500px;
-    height: 300px;
+
+  .image-faction {
+    width: 120px;
+    height: 70px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .information {
+    font-size: 0.7rem;
+  }
+
+  .faction-choose {
+    font-size: 1.8rem;
   }
 }
