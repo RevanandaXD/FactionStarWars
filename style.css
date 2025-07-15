@@ -133,7 +133,7 @@ body {
     font-size: 3.7rem;
   }
   .faction-container {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 150px);
   }
   .video-container {
     display: none;
@@ -149,7 +149,7 @@ body {
     font-size: 3rem;
   }
   .faction-container {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 120px);
   }
   .faction-choose {
     font-size: 2rem;
