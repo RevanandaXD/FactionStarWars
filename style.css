@@ -25,6 +25,7 @@ body {
   letter-spacing: 2px;
   color: #fff;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .faction-container {
@@ -32,6 +33,7 @@ body {
   grid-template-columns: repeat(4, 220px);
   gap: 10px;
   cursor: pointer;
+  justify-content: center;
 }
 
 .faction {
@@ -79,7 +81,7 @@ body {
 .information {
   font-weight: 500;
   font-size: 0.75rem;
-  padding: 0 9.5px 10px 9.5px;
+  padding: 0 10px 10px 10px;
   text-align: center;
 }
 
@@ -126,43 +128,69 @@ body {
   margin-bottom: 3px;
 }
 
-/* Responsive Styles */
-@media (max-width: 780px) {
+/* --- Responsive Breakpoints --- */
+
+/* Tablet (601px–900px) */
+@media (max-width: 900px) {
   .choice {
-    text-align: center;
-    font-size: 3.7rem;
+    font-size: 3.2rem;
   }
+
   .faction-container {
-    grid-template-columns: repeat(2, 150px);
+    grid-template-columns: repeat(2, 180px);
+    gap: 12px;
   }
-  .video-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+
+  .video {
+    width: 700px;
+    height: 400px;
+  }
+
+  .faction-choose {
+    font-size: 2.8rem;
   }
 }
 
-@media (max-width: 500px) {
+/* Phone (max 600px) */
+@media (max-width: 600px) {
   .choice {
-    text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    padding: 0 10px;
   }
+
   .faction-container {
     grid-template-columns: repeat(2, 150px);
+    gap: 10px;
   }
+
+  .faction {
+    padding: 8px;
+  }
+
+  .image-faction {
+    width: 130px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .information {
+    font-size: 0.7rem;
+  }
+
   .faction-choose {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
+
   .video-container {
     display: none;
-    opacity: 0;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
   }
+
   .video {
-    width: 500px;
-    height: 300px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
   }
 }
